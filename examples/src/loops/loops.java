@@ -1,4 +1,4 @@
-package src.loops;
+package loops;
 
 public class loops {
 }
