@@ -1,30 +1,29 @@
 package EvertuneStringTensionGrabber;
 
-import com.wiley.SeleniumBaseTest;
-import com.wiley.holders.DriverHolder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static EvertuneStringTensionGrabber.CaliberEnum.S0090;
-import static EvertuneStringTensionGrabber.CaliberEnum.S0100;
+import static EvertuneStringTensionGrabber.CaliberEnum.*;
 import static EvertuneStringTensionGrabber.NoteEnum.*;
 
-public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
+public class EvertuneStringTensionGrabber {
 
     private StringSet stringSet = new StringSet();
 
     @BeforeMethod
     public void setUp() {
         stringSet.addString(E, S0090);
-        stringSet.addString(B, S0100);
-        stringSet.addString(G, S0100);
-        stringSet.addString(D, S0100);
-        stringSet.addString(A, S0100);
-        stringSet.addString(D, S0100);
+        stringSet.addString(B, S0110);
+        stringSet.addString(G, S0160);
+        stringSet.addString(D, S0260);
+        stringSet.addString(A, S0360);
+        stringSet.addString(D, S0460);
     }
 
     @Test
     public void grabStringTensionValues() {
-        DriverHolder.getDriver();
+        stringSet.getStringList().forEach(guitarString -> {
+            System.out.println(guitarString.getNote().concat(" - " + guitarString.getCaliber()));
+        });
     }
 }
