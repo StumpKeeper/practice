@@ -1,6 +1,6 @@
-package EvertuneStringTensionGrabber;
+package EvertuneStringTensionGrabber.enums;
 
-enum NoteEnum {
+public enum NoteEnum {
 
     A("A"),
     B("B"),

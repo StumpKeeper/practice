@@ -1,10 +1,11 @@
 package EvertuneStringTensionGrabber;
 
+import EvertuneStringTensionGrabber.entities.StringSet;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static EvertuneStringTensionGrabber.CaliberEnum.*;
-import static EvertuneStringTensionGrabber.NoteEnum.*;
+import static EvertuneStringTensionGrabber.enums.CaliberEnum.*;
+import static EvertuneStringTensionGrabber.enums.NoteEnum.*;
 
 public class EvertuneStringTensionGrabber {
 
@@ -22,8 +23,8 @@ public class EvertuneStringTensionGrabber {
 
     @Test
     public void grabStringTensionValues() {
-        stringSet.getStringList().forEach(guitarString -> {
-            System.out.println(guitarString.getNote().concat(" - " + guitarString.getCaliber()));
-        });
+        stringSet.getStringList().forEach(guitarString ->
+                System.out.println(guitarString.getNote().concat(" - " + guitarString.getCaliber()))
+        );
     }
 }

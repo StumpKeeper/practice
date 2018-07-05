@@ -1,6 +1,6 @@
-package EvertuneStringTensionGrabber;
+package EvertuneStringTensionGrabber.enums;
 
-enum CaliberEnum {
+public enum CaliberEnum {
 
     S0070("007"),
     S0080("008"),
@@ -49,7 +49,6 @@ enum CaliberEnum {
     S0700("070"),
     S0720("072"),
     S0740("074");
-
 
     private String caliber;
 
