@@ -9,7 +9,7 @@ import static EvertuneStringTensionGrabber.enums.NoteEnum.*;
 
 public class EvertuneStringTensionGrabber {
 
-    private StringSet stringSet = new StringSet();
+    private final StringSet stringSet = new StringSet();
 
     @BeforeMethod
     public void setUp() {

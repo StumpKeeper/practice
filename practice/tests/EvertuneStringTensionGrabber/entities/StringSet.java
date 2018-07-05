@@ -10,7 +10,7 @@ import static java.lang.String.valueOf;
 
 public class StringSet {
 
-    private List<GuitarString> stringList = new ArrayList<>();
+    private final List<GuitarString> stringList = new ArrayList<>();
 
     public void addString(NoteEnum noteEnum, CaliberEnum caliberEnum) {
         stringList.add(new GuitarString(valueOf(noteEnum), valueOf(caliberEnum)));
