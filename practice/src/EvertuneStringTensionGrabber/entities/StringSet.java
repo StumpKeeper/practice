@@ -13,7 +13,7 @@ public class StringSet {
     private final List<GuitarString> stringList = new ArrayList<>();
 
     public void addString(NoteEnum noteEnum, CaliberEnum caliberEnum) {
-        stringList.add(new GuitarString(valueOf(noteEnum), valueOf(caliberEnum)));
+        stringList.add(new GuitarString(valueOf(noteEnum.note), valueOf(caliberEnum.caliber)));
     }
 
     public List<GuitarString> getStringList() {

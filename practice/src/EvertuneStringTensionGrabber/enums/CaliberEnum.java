@@ -50,7 +50,7 @@ public enum CaliberEnum {
     S0720("072"),
     S0740("074");
 
-    private final String caliber;
+    public final String caliber;
 
     CaliberEnum(String noteName) {
         this.caliber = noteName;

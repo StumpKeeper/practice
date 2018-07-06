@@ -10,7 +10,7 @@ public enum NoteEnum {
     E("E"),
     F("F");
 
-    private final String note;
+    public final String note;
 
     NoteEnum(String noteName) {
         this.note = noteName;
