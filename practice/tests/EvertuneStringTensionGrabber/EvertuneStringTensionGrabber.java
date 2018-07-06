@@ -15,7 +15,7 @@ public class EvertuneStringTensionGrabber {
 
     private static final String EVERTUNE_TENSION_CALC_BASE_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
 
-    private WebDriver webDriver = SeleniumHolder.getChromeDriver();
+    private final WebDriver webDriver = SeleniumHolder.getChromeDriver();
 
     @BeforeMethod
     public void setUp() {
