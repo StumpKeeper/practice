@@ -7,7 +7,11 @@ import static selenium_tools.SeleniumHolder.chromeDriverMode.HEADLESS;
 
 public class SeleniumBaseTest {
 
-    protected static final WebDriver headlessWebDriver = SeleniumHolder.getChromeDriver(HEADLESS);
+    private static final WebDriver headlessWebDriver = SeleniumHolder.getChromeDriver(HEADLESS);
+
+    public static WebDriver getHeadlessWebDriver() {
+        return headlessWebDriver;
+    }
 
     @AfterClass
     public void closeWebDriver() {
