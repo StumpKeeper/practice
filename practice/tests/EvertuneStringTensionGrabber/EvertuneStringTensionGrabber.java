@@ -8,24 +8,24 @@ import selenium_tools.SeleniumBaseTest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static EvertuneStringTensionGrabber.enums.StringSets.DROPD_9_46;
+import static EvertuneStringTensionGrabber.enums.StringSets.DROPC_12_56;
 
 public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
     private static final String EVERTUNE_TENSION_CALC_BASE_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
 
     private static final TensionCalcPage TENSION_CALC_PAGE = new TensionCalcPage();
-    private static final StringSet STRING_SET = new StringSet(DROPD_9_46);
+    private static final StringSet STRING_SET = new StringSet(DROPC_12_56);
 
     @Test
     public void grabStringTensionValues() {
         getHeadlessWebDriver().get(EVERTUNE_TENSION_CALC_BASE_URL);
-        calcStringSet(STRING_SET);
-        printStringSet(STRING_SET);
+        calcStringSet();
+        printStringSet();
     }
 
-    private void calcStringSet(StringSet stringSet) {
-        stringSet.getStringList().forEach(guitarString -> {
+    private void calcStringSet() {
+        STRING_SET.getStringList().forEach(guitarString -> {
             String fullOutput = TENSION_CALC_PAGE
                     .setStringSizeByText(guitarString.getSize())
                     .setNoteSizeByText(guitarString.getNote())
@@ -36,8 +36,8 @@ public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
         );
     }
 
-    private void printStringSet(StringSet stringSet) {
-        stringSet.getStringList().forEach(guitarString ->
+    private void printStringSet() {
+        STRING_SET.getStringList().forEach(guitarString ->
                 System.out.println(String.format("%s - %s - %s", guitarString.getNote(), guitarString.getSize(), guitarString.getTension())));
     }
 
