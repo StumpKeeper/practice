@@ -13,8 +13,8 @@ public class SeleniumHolder {
 
     public static WebDriver getChromeDriver(chromeDriverMode headless) {
         try {
-            File projectRoot = new File(".").getCanonicalFile();
-            System.setProperty("webdriver.chrome.driver", projectRoot.getPath() + "/practice/res/webdriver/chromedriver.exe");
+            String projectRoot = new File(".").getCanonicalPath();
+            System.setProperty("webdriver.chrome.driver", projectRoot + "/practice/res/webdriver/chromedriver.exe");
         } catch (IOException e) {
             e.printStackTrace();
         }

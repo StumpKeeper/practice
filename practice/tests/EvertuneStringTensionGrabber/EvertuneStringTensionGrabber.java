@@ -1,8 +1,7 @@
 package EvertuneStringTensionGrabber;
 
 import EvertuneStringTensionGrabber.entities.StringSet;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
+import EvertuneStringTensionGrabber.pages.TensionCalcPage;
 import org.testng.annotations.Test;
 import selenium_tools.SeleniumBaseTest;
 
@@ -14,6 +13,8 @@ import static EvertuneStringTensionGrabber.enums.StringSets.DROPD_9_46;
 public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
     private static final String EVERTUNE_TENSION_CALC_BASE_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
+
+    private static final TensionCalcPage TENSION_CALC_PAGE = new TensionCalcPage();
     private static final StringSet STRING_SET = new StringSet(DROPD_9_46);
 
     @Test
@@ -25,17 +26,19 @@ public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
     private void calcStringSet(StringSet stringSet) {
         stringSet.getStringList().forEach(guitarString -> {
-                    getStringSizeSelect().selectByVisibleText(guitarString.getCaliber());
-                    getNoteSizeSelect().selectByVisibleText(guitarString.getNote());
-                    clickCalculateButton();
-            guitarString.setTension(extractTensionValue(getCalculationOutputText()));
+            String fullOutput = TENSION_CALC_PAGE
+                    .setStringSizeByText(guitarString.getSize())
+                    .setNoteSizeByText(guitarString.getNote())
+                    .clickCalculateButton()
+                    .getCalculationOutputText();
+            guitarString.setTension(extractTensionValue(fullOutput));
                 }
         );
     }
 
     private void printStringSet(StringSet stringSet) {
         stringSet.getStringList().forEach(guitarString ->
-                System.out.println(guitarString.getNote().concat(" - " + guitarString.getCaliber()).concat(" - " + guitarString.getTension())));
+                System.out.println(String.format("%s - %s - %s", guitarString.getNote(), guitarString.getSize(), guitarString.getTension())));
     }
 
     private String extractTensionValue(String fullOutput) {
@@ -44,19 +47,5 @@ public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
         return m.find() ? m.group(0) : "Value not found...";
     }
 
-    private Select getStringSizeSelect() {
-        return new Select(getHeadlessWebDriver().findElement(By.cssSelector("#string_size")));
-    }
 
-    private Select getNoteSizeSelect() {
-        return new Select(getHeadlessWebDriver().findElement(By.cssSelector("#the_note")));
-    }
-
-    private void clickCalculateButton() {
-        getHeadlessWebDriver().findElement(By.cssSelector("input[value='Calculate']")).click();
-    }
-
-    private String getCalculationOutputText() {
-        return getHeadlessWebDriver().findElement(By.cssSelector("#output")).getText();
-    }
 }

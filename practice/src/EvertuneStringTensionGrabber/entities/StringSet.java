@@ -1,7 +1,7 @@
 package EvertuneStringTensionGrabber.entities;
 
-import EvertuneStringTensionGrabber.enums.CaliberEnum;
 import EvertuneStringTensionGrabber.enums.NoteEnum;
+import EvertuneStringTensionGrabber.enums.StringSizeEnum;
 
 import java.util.List;
 
@@ -13,8 +13,9 @@ public class StringSet {
         this.stringList = stringList;
     }
 
-    public void addString(NoteEnum noteEnum, CaliberEnum caliberEnum) {
-        stringList.add(new GuitarString(noteEnum, caliberEnum));
+    public StringSet addString(NoteEnum noteEnum, StringSizeEnum stringSizeEnum) {
+        stringList.add(new GuitarString(noteEnum, stringSizeEnum));
+        return this;
     }
 
     public List<GuitarString> getStringList() {

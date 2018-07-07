@@ -4,8 +4,8 @@ import EvertuneStringTensionGrabber.entities.GuitarString;
 
 import java.util.List;
 
-import static EvertuneStringTensionGrabber.enums.CaliberEnum.*;
 import static EvertuneStringTensionGrabber.enums.NoteEnum.*;
+import static EvertuneStringTensionGrabber.enums.StringSizeEnum.*;
 
 public class StringSets {
 

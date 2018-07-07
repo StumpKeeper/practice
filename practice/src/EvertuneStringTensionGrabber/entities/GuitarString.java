@@ -1,25 +1,25 @@
 package EvertuneStringTensionGrabber.entities;
 
-import EvertuneStringTensionGrabber.enums.CaliberEnum;
 import EvertuneStringTensionGrabber.enums.NoteEnum;
+import EvertuneStringTensionGrabber.enums.StringSizeEnum;
 
 public class GuitarString {
 
     private final String note;
-    private final String caliber;
+    private final String size;
     private String tension = "";
 
-    public GuitarString(NoteEnum note, CaliberEnum caliber) {
+    public GuitarString(NoteEnum note, StringSizeEnum size) {
         this.note = note.getNote();
-        this.caliber = caliber.getCaliber();
+        this.size = size.getStringSize();
     }
 
     public String getNote() {
         return note;
     }
 
-    public String getCaliber() {
-        return caliber;
+    public String getSize() {
+        return size;
     }
 
     public String getTension() {

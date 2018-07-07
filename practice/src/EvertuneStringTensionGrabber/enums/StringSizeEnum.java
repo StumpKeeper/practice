@@ -1,6 +1,6 @@
 package EvertuneStringTensionGrabber.enums;
 
-public enum CaliberEnum {
+public enum StringSizeEnum {
 
     S0070("007"),
     S0080("008"),
@@ -50,13 +50,13 @@ public enum CaliberEnum {
     S0720("072"),
     S0740("074");
 
-    public final String caliber;
+    public final String stringSize;
 
-    CaliberEnum(String noteName) {
-        this.caliber = noteName;
+    StringSizeEnum(String noteName) {
+        this.stringSize = noteName;
     }
 
-    public String getCaliber() {
-        return caliber;
+    public String getStringSize() {
+        return stringSize;
     }
 }
