@@ -8,18 +8,19 @@ import selenium_tools.SeleniumBaseTest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static EvertuneStringTensionGrabber.enums.StringSets.DROPCsharp_10_52;
+import static EvertuneStringTensionGrabber.enums.StringSetsEnum.EB_10_52;
+import static EvertuneStringTensionGrabber.enums.TuningsEnum.DROP_D;
 
 public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
-    private static final String EVERTUNE_TENSION_CALC_BASE_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
+    private static final String EVERTUNE_TENSION_CALC_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
 
     private static final TensionCalcPage TENSION_CALC_PAGE = new TensionCalcPage();
-    private static final StringSet STRING_SET = new StringSet(DROPCsharp_10_52);
+    private static final StringSet STRING_SET = new StringSet(DROP_D, EB_10_52);
 
     @Test
     public void grabStringTensionValues() {
-        getHeadlessWebDriver().get(EVERTUNE_TENSION_CALC_BASE_URL);
+        getHeadlessWebDriver().get(EVERTUNE_TENSION_CALC_URL);
         calcStringSet();
         printStringSet();
     }
