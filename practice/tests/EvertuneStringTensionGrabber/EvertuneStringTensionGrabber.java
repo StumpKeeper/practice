@@ -8,14 +8,14 @@ import selenium_tools.SeleniumBaseTest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static EvertuneStringTensionGrabber.enums.StringSets.DROPC_12_60_DA;
+import static EvertuneStringTensionGrabber.enums.StringSets.DROPCsharp_10_52;
 
 public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
     private static final String EVERTUNE_TENSION_CALC_BASE_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
 
     private static final TensionCalcPage TENSION_CALC_PAGE = new TensionCalcPage();
-    private static final StringSet STRING_SET = new StringSet(DROPC_12_60_DA);
+    private static final StringSet STRING_SET = new StringSet(DROPCsharp_10_52);
 
     @Test
     public void grabStringTensionValues() {

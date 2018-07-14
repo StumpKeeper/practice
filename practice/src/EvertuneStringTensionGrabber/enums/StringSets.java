@@ -97,4 +97,12 @@ public class StringSets {
             new GuitarString(C, S0340),
             new GuitarString(G, S0460),
             new GuitarString(C, S0600));
+
+    public static final List<GuitarString> DROPCsharp_10_52 = List.of(
+            new GuitarString(Ds, S0100),
+            new GuitarString(As, S0130),
+            new GuitarString(Fs, S0170),
+            new GuitarString(Cs, S0300),
+            new GuitarString(Gs, S0420),
+            new GuitarString(Cs, S0520));
 }
