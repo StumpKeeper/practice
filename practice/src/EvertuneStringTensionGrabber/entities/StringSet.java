@@ -4,20 +4,21 @@ import EvertuneStringTensionGrabber.enums.NoteEnum;
 import EvertuneStringTensionGrabber.enums.StringSetsEnum;
 import EvertuneStringTensionGrabber.enums.StringSizeEnum;
 import EvertuneStringTensionGrabber.enums.TuningsEnum;
-import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.testng.Assert.assertEquals;
+
 public class StringSet {
 
-    private List<GuitarString> stringList;
+    private List<GuitarString> stringList = new ArrayList<>();
 
     private static final String ERROR_MESSAGE = "Tuning/String Set size mismatch. Choose equally sized sets/tunings.";
 
     public StringSet(TuningsEnum tuningsEnum, StringSetsEnum stringSetsEnum) {
-        Assert.assertEquals(tuningsEnum.getNoteList().size(), stringSetsEnum.getStringSizeList().size(), ERROR_MESSAGE);
-        this.stringList = new ArrayList<>();
+        assertEquals(tuningsEnum.getNoteList().size(), stringSetsEnum.getStringSizeList().size(), ERROR_MESSAGE);
+
         for (int i = 0; i < tuningsEnum.getNoteList().size(); i++) {
             stringList.add(new GuitarString(tuningsEnum.getNoteList().get(i), stringSetsEnum.getStringSizeList().get(i)));
         }
