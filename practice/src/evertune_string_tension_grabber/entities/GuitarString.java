@@ -7,7 +7,7 @@ public class GuitarString {
 
     private final String note;
     private final String size;
-    private String tension = "";
+    private String tension;
 
     public GuitarString(NoteEnum note, StringSizeEnum size) {
         this.note = note.getNote();

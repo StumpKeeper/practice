@@ -34,7 +34,7 @@ public class WebDriverHolder {
             setDriverBinaryPaths();
             if (chromeDriverMode.equals(HEADLESS)) {
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless", "--disable-gpu", "--disable-extensions", "window-size=1366x768");
+                chromeOptions.addArguments("--headless", "--disable-gpu", "--disable-extensions", "window-size=1920x1080");
                 webDriver = new ChromeDriver(chromeOptions);
             } else
                 webDriver = new ChromeDriver();

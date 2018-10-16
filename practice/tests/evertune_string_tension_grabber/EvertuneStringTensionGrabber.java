@@ -9,15 +9,15 @@ import selenium_tools.WebDriverHolder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static evertune_string_tension_grabber.enums.StringSetsEnum.EB_10_52;
-import static evertune_string_tension_grabber.enums.TuningsEnum.DROP_D;
+import static evertune_string_tension_grabber.enums.StringSetsEnum.DA_12_60;
+import static evertune_string_tension_grabber.enums.TuningsEnum.DROP_C_SHARP;
 
 public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
     private static final String EVERTUNE_TENSION_CALC_URL = "https://evertune.com/faq/resources/string_tension_calculator.php";
 
     private static final TensionCalcPage TENSION_CALC_PAGE = new TensionCalcPage();
-    private static final StringSet STRING_SET = new StringSet(DROP_D, EB_10_52);
+    private static final StringSet STRING_SET = new StringSet(DROP_C_SHARP, DA_12_60);
 
     @Test
     public void grabStringTensionValues() {
