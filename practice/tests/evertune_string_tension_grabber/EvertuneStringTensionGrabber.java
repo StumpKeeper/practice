@@ -1,15 +1,16 @@
-package EvertuneStringTensionGrabber;
+package evertune_string_tension_grabber;
 
-import EvertuneStringTensionGrabber.entities.StringSet;
-import EvertuneStringTensionGrabber.pages.TensionCalcPage;
+import evertune_string_tension_grabber.entities.StringSet;
+import evertune_string_tension_grabber.pages.TensionCalcPage;
 import org.testng.annotations.Test;
 import selenium_tools.SeleniumBaseTest;
+import selenium_tools.WebDriverHolder;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static EvertuneStringTensionGrabber.enums.StringSetsEnum.EB_10_52;
-import static EvertuneStringTensionGrabber.enums.TuningsEnum.DROP_D;
+import static evertune_string_tension_grabber.enums.StringSetsEnum.EB_10_52;
+import static evertune_string_tension_grabber.enums.TuningsEnum.DROP_D;
 
 public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
@@ -20,7 +21,7 @@ public class EvertuneStringTensionGrabber extends SeleniumBaseTest {
 
     @Test
     public void grabStringTensionValues() {
-        getHeadlessWebDriver().get(EVERTUNE_TENSION_CALC_URL);
+        WebDriverHolder.getDriver().get(EVERTUNE_TENSION_CALC_URL);
         calcStringSet();
         printStringSet();
     }

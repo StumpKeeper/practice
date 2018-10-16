@@ -1,4 +1,4 @@
-package EvertuneStringTensionGrabber.enums;
+package evertune_string_tension_grabber.enums;
 
 public enum NoteEnum {
 

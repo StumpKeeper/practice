@@ -1,20 +1,17 @@
 package selenium_tools;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-
-import static selenium_tools.SeleniumHolder.chromeDriverMode.HEADLESS;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class SeleniumBaseTest {
 
-    private static final WebDriver headlessWebDriver = SeleniumHolder.getChromeDriver(HEADLESS);
-
-    public static WebDriver getHeadlessWebDriver() {
-        return headlessWebDriver;
+    @BeforeSuite
+    public void initWebDriver() {
+        WebDriverHolder.init(ChromeDriverModeEnum.HEADLESS);
     }
 
-    @AfterClass
+    @AfterSuite
     public void closeWebDriver() {
-        headlessWebDriver.close();
+        WebDriverHolder.closeDriver();
     }
 }

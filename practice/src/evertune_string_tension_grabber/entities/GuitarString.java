@@ -1,7 +1,7 @@
-package EvertuneStringTensionGrabber.entities;
+package evertune_string_tension_grabber.entities;
 
-import EvertuneStringTensionGrabber.enums.NoteEnum;
-import EvertuneStringTensionGrabber.enums.StringSizeEnum;
+import evertune_string_tension_grabber.enums.NoteEnum;
+import evertune_string_tension_grabber.enums.StringSizeEnum;
 
 public class GuitarString {
 

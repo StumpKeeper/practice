@@ -1,9 +1,9 @@
-package EvertuneStringTensionGrabber.enums;
+package evertune_string_tension_grabber.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static EvertuneStringTensionGrabber.enums.NoteEnum.*;
+import static evertune_string_tension_grabber.enums.NoteEnum.*;
 
 public enum TuningsEnum {
 
