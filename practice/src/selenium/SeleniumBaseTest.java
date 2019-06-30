@@ -7,11 +7,11 @@ public class SeleniumBaseTest {
 
     @BeforeSuite
     public void initWebDriver() {
-        WebDriverHolder.init(ChromeDriverMode.NORMAL);
+        WebDriverHolder.INSTANCE.init(ChromeDriverMode.NORMAL);
     }
 
     @AfterSuite
     public void closeWebDriver() {
-        WebDriverHolder.closeDriver();
+        WebDriverHolder.INSTANCE.closeDriver();
     }
 }

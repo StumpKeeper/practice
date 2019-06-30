@@ -1,12 +1,14 @@
 package org.acme.grabber.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import static selenium.WebDriverHolder.getDriver;
+import selenium.WebDriverHolder;
 
 public class TensionCalcPage {
+
+    private WebDriver driver = WebDriverHolder.INSTANCE.getDriver();
 
     public TensionCalcPage setStringSizeByText(String stringSize) {
         getStringSizeSelect().selectByVisibleText(stringSize);
@@ -24,19 +26,19 @@ public class TensionCalcPage {
     }
 
     public String getCalculationOutputText() {
-        return getDriver().findElement(By.cssSelector("#output")).getText();
+        return driver.findElement(By.cssSelector("#output")).getText();
     }
 
     private Select getStringSizeSelect() {
-        return new Select(getDriver().findElement(By.cssSelector("#string_size")));
+        return new Select(driver.findElement(By.cssSelector("#string_size")));
     }
 
     private Select getNoteSizeSelect() {
-        return new Select(getDriver().findElement(By.cssSelector("#the_note")));
+        return new Select(driver.findElement(By.cssSelector("#the_note")));
     }
 
     private WebElement getCalculateButton() {
-        return getDriver().findElement(By.cssSelector("input[value='Calculate']"));
+        return driver.findElement(By.cssSelector("input[value='Calculate']"));
     }
 
 }

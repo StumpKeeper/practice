@@ -1,6 +1,6 @@
-package org.acme.grabber.enums;
+package org.acme.grabber.entities
 
-public enum StringSize {
+enum class StringSize constructor(val value: String) {
 
     S0070("007"),
     S0080("008"),
@@ -48,15 +48,5 @@ public enum StringSize {
     S0680("068"),
     S0700("070"),
     S0720("072"),
-    S0740("074");
-
-    public final String stringSize;
-
-    StringSize(String noteName) {
-        this.stringSize = noteName;
-    }
-
-    public String getStringSize() {
-        return stringSize;
-    }
+    S0740("074")
 }
