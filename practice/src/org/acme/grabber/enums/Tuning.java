@@ -1,11 +1,11 @@
-package evertune_string_tension_grabber.enums;
+package org.acme.grabber.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static evertune_string_tension_grabber.enums.NoteEnum.*;
+import static org.acme.grabber.enums.Note.*;
 
-public enum TuningsEnum {
+public enum Tuning {
 
     STANDARD(Arrays.asList(E, B, G, D, A, E)),
     STANDARD_D(Arrays.asList(D, A, F, C, G, D)),
@@ -13,13 +13,13 @@ public enum TuningsEnum {
     DROP_C_SHARP(Arrays.asList(Ds, As, Fs, Cs, Gs, Cs)),
     DROP_C(Arrays.asList(D, A, F, C, G, C));
 
-    private List<NoteEnum> noteList;
+    private List<Note> noteList;
 
-    TuningsEnum(List<NoteEnum> noteList) {
+    Tuning(List<Note> noteList) {
         this.noteList = noteList;
     }
 
-    public List<NoteEnum> getNoteList() {
+    public List<Note> getNoteList() {
         return noteList;
     }
 }

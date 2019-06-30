@@ -1,6 +1,6 @@
-package evertune_string_tension_grabber.enums;
+package org.acme.grabber.enums;
 
-public enum StringSizeEnum {
+public enum StringSize {
 
     S0070("007"),
     S0080("008"),
@@ -52,7 +52,7 @@ public enum StringSizeEnum {
 
     public final String stringSize;
 
-    StringSizeEnum(String noteName) {
+    StringSize(String noteName) {
         this.stringSize = noteName;
     }
 

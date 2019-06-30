@@ -1,6 +1,6 @@
 import org.testng.annotations.Test;
-import selenium_tools.SeleniumBaseTest;
-import selenium_tools.WebDriverHolder;
+import selenium.SeleniumBaseTest;
+import selenium.WebDriverHolder;
 
 public class CustomTestRunner extends SeleniumBaseTest {
 

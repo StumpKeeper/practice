@@ -1,10 +1,10 @@
-package evertune_string_tension_grabber.pages;
+package org.acme.grabber.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import static selenium_tools.WebDriverHolder.getDriver;
+import static selenium.WebDriverHolder.getDriver;
 
 public class TensionCalcPage {
 

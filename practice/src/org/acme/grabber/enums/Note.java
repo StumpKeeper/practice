@@ -1,6 +1,6 @@
-package evertune_string_tension_grabber.enums;
+package org.acme.grabber.enums;
 
-public enum NoteEnum {
+public enum Note {
 
     A("A"),
     As("A#/Bb"),
@@ -17,8 +17,8 @@ public enum NoteEnum {
 
     public final String note;
 
-    NoteEnum(String noteName) {
-        this.note = noteName;
+    Note(String name) {
+        this.note = name;
     }
 
     public String getNote() {

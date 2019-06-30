@@ -1,4 +1,4 @@
-package selenium_tools;
+package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +8,7 @@ import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
 
-import static selenium_tools.ChromeDriverModeEnum.HEADLESS;
+import static selenium.ChromeDriverMode.HEADLESS;
 
 public class WebDriverHolder {
 
@@ -29,7 +29,7 @@ public class WebDriverHolder {
      *
      * @param chromeDriverMode - desired driver mode enum
      */
-    public static void init(ChromeDriverModeEnum chromeDriverMode) {
+    public static void init(ChromeDriverMode chromeDriverMode) {
         if (webDriver == null) {
             setDriverBinaryPaths();
             if (chromeDriverMode.equals(HEADLESS)) {
