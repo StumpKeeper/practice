@@ -4,5 +4,4 @@ enum class ChromeDriverMode {
 
     NORMAL,
     HEADLESS
-
 }

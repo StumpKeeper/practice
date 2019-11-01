@@ -19,7 +19,7 @@ class EvertuneStringTensionGrabber : SeleniumBaseTest() {
     }
 
     private fun calcStringSet() {
-        STRING_SET.stringList.forEach { guitarString ->
+        STRING_SET.strings.forEach { guitarString ->
             val fullOutput = TensionCalcPage()
                     .setStringSizeByText(guitarString.size.value)
                     .setNoteSizeByText(guitarString.note.value)
@@ -30,8 +30,7 @@ class EvertuneStringTensionGrabber : SeleniumBaseTest() {
     }
 
     private fun printStringSet() {
-        STRING_SET.stringList.forEach { guitarString -> println(String.format("%s - %s - %s", guitarString.note, guitarString.size, guitarString.tension)) }
-    }
+        STRING_SET.strings.forEach { guitarString -> println(guitarString.toString()) }    }
 
     private fun extractTensionValue(fullOutput: String?): String {
         val p = Pattern.compile("[\\d.]+")
