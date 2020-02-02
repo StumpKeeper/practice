@@ -5,7 +5,5 @@ class GuitarString(
         val size: StringSize,
         var tension: String = "") {
 
-    override fun toString(): String {
-        return String.format("%s - %s - %s", this.note, this.size, this.tension)
-    }
+    override fun toString() = "$note - $size - $tension"
 }

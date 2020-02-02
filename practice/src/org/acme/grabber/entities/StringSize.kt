@@ -1,6 +1,6 @@
 package org.acme.grabber.entities
 
-enum class StringSize constructor(val value: String) {
+enum class StringSize(val value: String) {
 
     S0070("007"),
     S0080("008"),

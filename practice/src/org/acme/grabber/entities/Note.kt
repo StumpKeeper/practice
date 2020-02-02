@@ -1,6 +1,6 @@
 package org.acme.grabber.entities
 
-enum class Note constructor(val value: String) {
+enum class Note(val value: String) {
 
     A("A"),
     As("A#/Bb"),
