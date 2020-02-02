@@ -1,37 +1,27 @@
 package org.acme.grabber.pages
 
-import org.openqa.selenium.By
-import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.Select
-import selenium.WebDriverHolder
+import selenium.WebDriverHolder.webDriver
+import selenium.elementByCss
 
 class TensionCalcPage {
+    private val noteSizeSelect = Select(webDriver.elementByCss("#the_note"))
 
-    private val driver = WebDriverHolder.webDriver
+    private val calculateButton = webDriver.elementByCss("input[value='Calculate']")
 
-    fun getCalculationOutputText(): String? = driver?.findElement(By.cssSelector("#output"))?.text
+    private val stringSizeSelect = Select(webDriver.elementByCss("#string_size"))
 
-    private val noteSizeSelect: Select
-        get() = Select(driver!!.findElement(By.cssSelector("#the_note")))
+    fun getCalculationOutputText() = webDriver.elementByCss("#output").text ?: ""
 
-    private val calculateButton: WebElement
-        get() = driver!!.findElement(By.cssSelector("input[value='Calculate']"))
-
-    fun setStringSizeByText(stringSize: String): TensionCalcPage {
-        getStringSizeSelect().selectByVisibleText(stringSize)
-        return this
+    fun setStringSize(stringSize: String) = apply {
+        stringSizeSelect.selectByVisibleText(stringSize)
     }
 
-    fun setNoteSizeByText(noteValue: String): TensionCalcPage {
+    fun setNoteSize(noteValue: String) = apply {
         noteSizeSelect.selectByVisibleText(noteValue)
-        return this
     }
 
-    fun clickCalculateButton(): TensionCalcPage {
+    fun clickCalculateButton() = apply {
         calculateButton.click()
-        return this
     }
-
-    private fun getStringSizeSelect(): Select = Select(driver!!.findElement(By.cssSelector("#string_size")))
-
 }
