@@ -4,33 +4,39 @@ import org.acme.grabber.entities.TunedStringSet
 import org.acme.grabber.entities.Tuning
 import org.acme.grabber.entities.VendorStringSet.DA_12_60
 import org.acme.grabber.pages.TensionCalcPage
+import org.testng.annotations.AfterMethod
 import org.testng.annotations.Test
-import selenium.SeleniumBaseTest
-import selenium.WebDriverHolder
+import selenium.WebDriverHolder.webDriver
 import java.util.regex.Pattern
 
-class EvertuneStringTensionGrabber : SeleniumBaseTest() {
+class EvertuneStringTensionGrabber {
 
     @Test
     fun grabStringTensionValues() {
-        WebDriverHolder.webDriver!!.get(EVERTUNE_TENSION_CALC_URL)
+        webDriver.get(EVERTUNE_TENSION_CALC_URL)
         calcStringSet()
         printStringSet()
     }
 
+    @AfterMethod
+    fun closeBrowser() {
+        webDriver.close()
+    }
+
     private fun calcStringSet() {
-        STRING_SET.strings.forEach { guitarString ->
+        STRING_SET.strings.forEach {
             val fullOutput = TensionCalcPage()
-                    .setStringSizeByText(guitarString.size.value)
-                    .setNoteSizeByText(guitarString.note.value)
+                    .setStringSize(it.size.value)
+                    .setNoteSize(it.note.value)
                     .clickCalculateButton()
                     .getCalculationOutputText()
-            guitarString.tension = extractTensionValue(fullOutput)
+            it.tension = extractTensionValue(fullOutput)
         }
     }
 
     private fun printStringSet() {
-        STRING_SET.strings.forEach { guitarString -> println(guitarString.toString()) }    }
+        STRING_SET.strings.forEach { println(it.toString()) }
+    }
 
     private fun extractTensionValue(fullOutput: String?): String {
         val p = Pattern.compile("[\\d.]+")
