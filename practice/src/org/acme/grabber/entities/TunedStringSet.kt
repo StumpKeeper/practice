@@ -19,9 +19,9 @@ class TunedStringSet(private val tuning: Tuning, private val vendorStringSet: Ve
     }
 
     fun calculateTension() {
-        WebDriverHolder.webDriver.get("https://evertune.com/faq/resources/string_tension_calculator.php")
+        WebDriverHolder.webDriver.get(TensionCalcPage.url)
         strings.forEach {
-            val fullOutput = TensionCalcPage()
+            val fullOutput = TensionCalcPage
                     .setStringSize(it.size.value)
                     .setNoteSize(it.note.value)
                     .clickCalculateButton()
