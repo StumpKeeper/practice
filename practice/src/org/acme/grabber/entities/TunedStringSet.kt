@@ -32,7 +32,9 @@ class TunedStringSet(private val tuning: Tuning, private val vendorStringSet: Ve
 
     fun prettyPrint() {
         println("Tension chart for ${vendorStringSet.displayName} in ${tuning.displayName} tuning:")
-        strings.forEach { println(it.toString()) }
+        strings.forEachIndexed { index, guitarString ->
+            println("String ${index + 1} - $guitarString")
+        }
     }
 
     private fun extractTensionValue(fullOutput: String?): String {
