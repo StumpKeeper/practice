@@ -9,6 +9,7 @@ enum class Tuning(val displayName: String, val notes: List<Note>) {
     DROP_D("Drop D (6 string)", listOf(E, B, G, D, A, D)),
     DROP_C_SHARP("Drop C# (6 string)", listOf(Ds, As, Fs, Cs, Gs, Cs)),
     DROP_C("Drop C (6 string)", listOf(D, A, F, C, G, C)),
-    DROP_A_6("Drop A (6 string)", listOf(B, G, D, A, E, A))
+    DROP_A_6("Drop A (6 string)", listOf(B, Fs, D, A, E, A)),
+    DROP_B_6("Drop B (6 string)", listOf(Cs, Gs, E, B, Fs, B))
 }
 
