@@ -10,7 +10,7 @@ import selenium.ChromeDriverMode.NORMAL
 object WebDriverHolder {
     val webDriver: WebDriver by lazy { init() }
 
-    private fun init(chromeDriverMode: ChromeDriverMode = NORMAL) = let {
+    private fun init(chromeDriverMode: ChromeDriverMode = HEADLESS) = let {
         ChromeDriverManager.chromedriver().setup()
         when (chromeDriverMode) {
             NORMAL -> {
