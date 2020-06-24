@@ -1,11 +1,11 @@
-package selenium
+package org.acme.selenium
 
-import io.github.bonigarcia.wdm.ChromeDriverManager
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager
+import org.acme.selenium.ChromeDriverMode.HEADLESS
+import org.acme.selenium.ChromeDriverMode.NORMAL
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
-import selenium.ChromeDriverMode.HEADLESS
-import selenium.ChromeDriverMode.NORMAL
 
 object WebDriverHolder {
     val webDriver: WebDriver by lazy { init() }

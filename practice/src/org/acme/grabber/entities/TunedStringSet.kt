@@ -1,7 +1,7 @@
 package org.acme.grabber.entities
 
 import org.acme.grabber.pages.TensionCalcPage
-import selenium.WebDriverHolder
+import org.acme.selenium.WebDriverHolder
 import java.util.regex.Pattern
 
 class TunedStringSet(private val tuning: Tuning, private val vendorStringSet: VendorStringSet) {

@@ -1,4 +1,4 @@
-package selenium
+package org.acme.selenium
 
 enum class ChromeDriverMode {
 

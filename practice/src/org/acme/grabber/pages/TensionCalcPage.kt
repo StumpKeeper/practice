@@ -1,8 +1,8 @@
 package org.acme.grabber.pages
 
+import org.acme.selenium.WebDriverHolder.webDriver
+import org.acme.selenium.elementByCss
 import org.openqa.selenium.support.ui.Select
-import selenium.WebDriverHolder.webDriver
-import selenium.elementByCss
 
 object TensionCalcPage {
     const val url: String = "https://evertune.com/faq/resources/string_tension_calculator.php"
