@@ -12,6 +12,7 @@
 
 # idea local files
 .idea/*
+/practice.iml
 
 # Package Files #
 *.jar
