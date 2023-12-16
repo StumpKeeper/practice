@@ -5,7 +5,7 @@ import org.acme.selenium.elementByCss
 import org.openqa.selenium.support.ui.Select
 
 object TensionCalcPage {
-    const val url: String = "https://evertune.com/faq/resources/string_tension_calculator.php"
+    const val url: String = "https://www.evertune.com/resources/string_tension_gauge_calculator.php"
 
     private fun noteSizeSelect() = Select(webDriver.elementByCss("#the_note"))
     private fun calculateButton() = webDriver.elementByCss("input[value='Calculate']")
